@@ -2,7 +2,7 @@ import { BasePage } from "./base.page.js";
 
 export abstract class SalesPortalPage extends BasePage {
   protected readonly spinner = this.findElement(".spinner-border");
-  protected readonly notification = this.findElement(".toast-body");
+  protected readonly notification = this.findElement(".toast-body").last();
   abstract readonly uniqueElement: string;
 
   async waitForOpened() {
@@ -14,7 +14,7 @@ export abstract class SalesPortalPage extends BasePage {
     await this.waitForElement(this.spinner, "hidden", 30000);
   }
 
-  async getFirstNotificationText() {
+  async getLastNotificationText() {
     return this.getText(this.notification);
   }
 

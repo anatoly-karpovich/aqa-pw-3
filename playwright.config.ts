@@ -40,8 +40,22 @@ export default defineConfig({
     { name: "setup", testMatch: /.*\.setup\.ts/ },
     {
       name: "chromium",
-      use: { ...devices["Desktop Chrome"], headless: true, storageState: "src/.auth/user.json" },
+      use: {
+        ...devices["Desktop Chrome"],
+        headless: true,
+        storageState: "src/.auth/user.json",
+      },
       dependencies: ["setup"],
+      testDir: "./src/ui/tests",
+    },
+
+    {
+      name: "api",
+      use: {
+        ...devices["Desktop Chrome"],
+        headless: true,
+      },
+      testDir: "./src/api/tests",
     },
 
     // {

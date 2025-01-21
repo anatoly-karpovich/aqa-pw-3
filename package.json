@@ -4,6 +4,7 @@
   "main": "index.js",
   "scripts": {
     "test": "npx playwright test",
+    "test:api": "npm run test -- --project=api",
     "report-html": "npx playwright show-report",
     "ui-mode": "npx playwright test --ui"
   },

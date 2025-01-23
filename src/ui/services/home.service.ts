@@ -3,6 +3,7 @@ import { CustomersListPage } from "../pages/customers/customers.page";
 import { HomePage } from "../pages/home.page";
 import { Metric } from "../../data/types/home.types";
 import numeral from "numeral";
+import { logStep } from "../../utils/reporter/logStep";
 
 export class HomePageService {
   private homePage: HomePage;
@@ -12,12 +13,14 @@ export class HomePageService {
     this.customersPage = new CustomersListPage(page);
   }
 
+  @logStep()
   async openCustomersPage() {
     await this.homePage.clickOnViewDetailsButton("Customers");
     await this.homePage.waitForSpinnerToHide();
     await this.customersPage.waitForOpened();
   }
 
+  @logStep()
   async validateMetric(metric: Metric, value: number) {
     const actualValue = await this.homePage.getMetricValue(metric);
     let expectedValue: string | number;
@@ -48,6 +51,7 @@ export class HomePageService {
     expect(actualValue).toBe(expectedValue);
   }
 
+  @logStep()
   async checkMetricLayout(metric: Metric) {
     const container = this.homePage.getMetricContainer(metric);
     await expect(container).toHaveScreenshot();

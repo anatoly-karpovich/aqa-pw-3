@@ -3,10 +3,15 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "npx playwright test",
+    "test": "cross-env QASE_MODE=testops npx playwright test",
     "test:api": "npm run test -- --project=api",
+    "test:ui": "npm run test -- --project=chromium",
+    "test:ui-smoke": "npm run test:ui -- --grep @smoke",
+    "test:ui-regression": "npm run test:ui -- --grep @regression",
     "report-html": "npx playwright show-report",
-    "ui-mode": "npx playwright test --ui"
+    "ui-mode": "npx playwright test --ui",
+    "allure-report": "allure generate allure-results -o allure-report --clean",
+    "allure-report-open": "npm run allure-report && allure open allure-report"
   },
   "keywords": [],
   "author": "",
@@ -16,13 +21,17 @@
     "@playwright/test": "^1.49.1",
     "@types/lodash": "^4.17.14",
     "@types/node": "^22.10.6",
-    "@types/numeral": "^2.0.5"
+    "@types/numeral": "^2.0.5",
+    "allure-playwright": "^3.0.9"
   },
   "dependencies": {
     "@faker-js/faker": "^9.3.0",
     "@types/dotenv": "^6.1.1",
+    "allure-commandline": "^2.32.0",
+    "cross-env": "^7.0.3",
     "dotenv": "^16.4.7",
     "lodash": "^4.17.21",
-    "numeral": "^2.0.6"
+    "numeral": "^2.0.6",
+    "playwright-qase-reporter": "^2.0.16"
   }
 }

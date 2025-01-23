@@ -52,17 +52,23 @@ test.describe("[UI] [Customers] [Add New Customer]", async function () {
     expect(notificationText).toBe(NOTIFICATIONS.CUSTOMER_CREATED);
   });
 
-  test("Should create new customer with valid data with Page Services", async ({
-    signInPageService,
-    homePageService,
-    customersPageService,
-    addNewCustomerPageService,
-  }) => {
-    await signInPageService.openSalesPortal();
-    await signInPageService.loginAsAdmin();
-    await homePageService.openCustomersPage();
-    await customersPageService.openAddNewCustomerPage();
-    await addNewCustomerPageService.create();
-    await customersPageService.validateCreateCustomerNotification();
-  });
+  test(
+    "Should create new customer with valid data with Page Services",
+    { tag: ["@smoke", "@regression"] },
+    async ({
+      signInPageService,
+      homePageService,
+      customersPageService,
+      addNewCustomerPageService,
+      customersApiService,
+    }) => {
+      await signInPageService.openSalesPortal();
+      await homePageService.openCustomersPage();
+      await customersPageService.openAddNewCustomerPage();
+      const createdCustomer = await addNewCustomerPageService.create();
+      await customersPageService.validateCreateCustomerNotification();
+      const customerFromApi = await customersApiService.get(createdCustomer.Customer._id);
+      expect(createdCustomer.Customer).toMatchObject({ ...customerFromApi });
+    }
+  );
 });

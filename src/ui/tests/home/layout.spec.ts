@@ -4,7 +4,7 @@ import { STATUS_CODES } from "../../../data/statusCodes";
 import { test } from "../../../fixtures/services.fixture";
 
 test.describe(`[UI] [Home] Metrics layout`, async function () {
-  test.only(
+  test(
     "Should check layout of Orders This Year metric",
     { tag: ["@regression"] },
     async function ({ signInPageService, mock, homePageService }) {

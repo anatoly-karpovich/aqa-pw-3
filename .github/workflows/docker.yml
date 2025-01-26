@@ -26,7 +26,7 @@ jobs:
             -v ${{ github.workspace }}:/usr/src/app \
             -w /usr/src/app \
             mcr.microsoft.com/playwright:v1.49.1-noble \
-            sh -c "npm install && npx playwright install && npx playwright test:ui-regression"
+            sh -c "npm install && npx playwright install && npm run test:ui-regression"
 
       # Step 4: Upload Playwright report
       - name: Upload Playwright report

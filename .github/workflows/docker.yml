@@ -17,18 +17,23 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      # Step 2: Install dependencies and run tests
-      - name: Install dependencies and run Playwright tests
+      # Install dependencies
+      - name: Install dependencies
+        run: npm ci
+
+      # Install browsers
+      - name: Install Playwright Browsers
+        run: npx playwright install
+
+      # Step 2: run tests
+      - name: Run Playwright tests
         env:
           ADMIN_PASSWORD: ${{ secrets.ADMIN_PASSWORD }}
           ADMIN_USERNAME: ${{ secrets.ADMIN_USERNAME }}
           QASE_API_TOKEN: ${{ secrets.QASE_API_TOKEN }}
           QASE_PROJECT_ID: ${{ secrets.QASE_PROJECT_ID }}
           SALES_PORTAL_URL: ${{ secrets.SALES_PORTAL_URL }}
-        run: |
-          npm install
-          npx playwright install
-          npm run test:ui-regression
+        run: npm run test:ui-regression
 
       # Step 3: Upload Playwright report
       - name: Upload Playwright report

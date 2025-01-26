@@ -16,51 +16,51 @@ test.describe(`[UI] [Home] Metrics layout`, async function () {
     }
   );
 
-  // test(
-  //   "Should check layout of Total Revenue metric",
-  //   { tag: ["@regression"] },
-  //   async function ({ signInPageService, mock, homePageService }) {
-  //     const mockData = structuredClone(homePageMock);
-  //     mockData.Metrics.orders.totalRevenue = 100000000;
-  //     await mock.modifyReponse(apiConfig.baseUrl + apiConfig.endpoints.Metrics, mockData, STATUS_CODES.OK);
-  //     await signInPageService.openSalesPortal();
-  //     await homePageService.checkMetricLayout("Total Revenue");
-  //   }
-  // );
+  test(
+    "Should check layout of Total Revenue metric",
+    { tag: ["@regression"] },
+    async function ({ signInPageService, mock, homePageService }) {
+      const mockData = structuredClone(homePageMock);
+      mockData.Metrics.orders.totalRevenue = 100000000;
+      await mock.modifyReponse(apiConfig.baseUrl + apiConfig.endpoints.Metrics, mockData, STATUS_CODES.OK);
+      await signInPageService.openSalesPortal();
+      await homePageService.checkMetricLayout("Total Revenue");
+    }
+  );
 
-  // test(
-  //   "Should check layout of Avg Order Value metric",
-  //   { tag: ["@regression"] },
-  //   async function ({ signInPageService, mock, homePageService }) {
-  //     const mockData = structuredClone(homePageMock);
-  //     mockData.Metrics.orders.averageOrderValue = 10000;
-  //     await mock.modifyReponse(apiConfig.baseUrl + apiConfig.endpoints.Metrics, mockData, STATUS_CODES.OK);
-  //     await signInPageService.openSalesPortal();
-  //     await homePageService.checkMetricLayout("Avg Order Value");
-  //   }
-  // );
+  test(
+    "Should check layout of Avg Order Value metric",
+    { tag: ["@regression"] },
+    async function ({ signInPageService, mock, homePageService }) {
+      const mockData = structuredClone(homePageMock);
+      mockData.Metrics.orders.averageOrderValue = 10000;
+      await mock.modifyReponse(apiConfig.baseUrl + apiConfig.endpoints.Metrics, mockData, STATUS_CODES.OK);
+      await signInPageService.openSalesPortal();
+      await homePageService.checkMetricLayout("Avg Order Value");
+    }
+  );
 
-  // test(
-  //   "Should check layout of New Customers metric",
-  //   { tag: ["@regression"] },
-  //   async function ({ signInPageService, mock, homePageService }) {
-  //     const mockData = structuredClone(homePageMock);
-  //     mockData.Metrics.customers.totalNewCustomers = 100;
-  //     await mock.modifyReponse(apiConfig.baseUrl + apiConfig.endpoints.Metrics, mockData, STATUS_CODES.OK);
-  //     await signInPageService.openSalesPortal();
-  //     await homePageService.checkMetricLayout("New Customers");
-  //   }
-  // );
+  test(
+    "Should check layout of New Customers metric",
+    { tag: ["@regression"] },
+    async function ({ signInPageService, mock, homePageService }) {
+      const mockData = structuredClone(homePageMock);
+      mockData.Metrics.customers.totalNewCustomers = 100;
+      await mock.modifyReponse(apiConfig.baseUrl + apiConfig.endpoints.Metrics, mockData, STATUS_CODES.OK);
+      await signInPageService.openSalesPortal();
+      await homePageService.checkMetricLayout("New Customers");
+    }
+  );
 
-  // test(
-  //   "Should check layout of Canceled Orders metric",
-  //   { tag: ["@regression"] },
-  //   async function ({ signInPageService, mock, homePageService }) {
-  //     const mockData = structuredClone(homePageMock);
-  //     mockData.Metrics.orders.totalCanceledOrders = 5;
-  //     await mock.modifyReponse(apiConfig.baseUrl + apiConfig.endpoints.Metrics, mockData, STATUS_CODES.OK);
-  //     await signInPageService.openSalesPortal();
-  //     await homePageService.checkMetricLayout("Canceled Orders");
-  //   }
-  // );
+  test(
+    "Should check layout of Canceled Orders metric",
+    { tag: ["@regression"] },
+    async function ({ signInPageService, mock, homePageService }) {
+      const mockData = structuredClone(homePageMock);
+      mockData.Metrics.orders.totalCanceledOrders = 5;
+      await mock.modifyReponse(apiConfig.baseUrl + apiConfig.endpoints.Metrics, mockData, STATUS_CODES.OK);
+      await signInPageService.openSalesPortal();
+      await homePageService.checkMetricLayout("Canceled Orders");
+    }
+  );
 });

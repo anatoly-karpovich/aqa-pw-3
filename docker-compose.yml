@@ -5,7 +5,6 @@ services:
     volumes:
       - .:/usr/src/app
     working_dir: /usr/src/app
-    tty: true
 
   playwright-regression:
     build: .
@@ -13,4 +12,3 @@ services:
       - .:/usr/src/app
     working_dir: /usr/src/app
     command: npm run test:ui-regression
-    tty: true

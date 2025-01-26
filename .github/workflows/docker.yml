@@ -1,0 +1,36 @@
+name: Playwright Tests with Docker
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout the code
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Step 2: Set up Docker
+      - name: Ensure Docker is installed
+        run: docker --version
+
+      # Step 3: Build and run the Playwright Docker image
+      - name: Build and run Playwright container
+        run: |
+          docker run --rm \
+            -v ${{ github.workspace }}:/usr/src/app \
+            -w /usr/src/app \
+            mcr.microsoft.com/playwright:v1.49.1-noble \
+            sh -c "npm install && npx playwright install && npx playwright test:ui-regression"
+
+      # Step 4: Upload Playwright report
+      - name: Upload Playwright report
+        uses: actions/upload-artifact@v3
+        with:
+          name: playwright-report
+          path: playwright-report/

@@ -3,6 +3,9 @@ import * as dotenv from "dotenv";
 
 dotenv.config();
 
+process.env.QASE_RUN_NAME = `Playwright Test Run ${new Date().toISOString()}`;
+process.env.CI && (process.env.QASE_MODE = "testops");
+
 /**
  * Read environment variables from file.
  * https://github.com/motdotla/dotenv
@@ -16,6 +19,7 @@ dotenv.config();
  */
 export default defineConfig({
   testDir: "./src/ui/tests",
+  globalTeardown: require.resolve("./src/config/global-teardown.ts"),
   /* Run tests in files in parallel */
   fullyParallel: true,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
@@ -36,11 +40,11 @@ export default defineConfig({
           api: {
             token: `${process.env.QASE_API_TOKEN}`,
           },
-          project: "SPD",
+          project: `${process.env.QASE_PROJECT_ID}`,
           uploadAttachments: true,
           run: {
             complete: true,
-            title: `Playwright Test Run ${new Date().toISOString()}`,
+            title: process.env.QASE_RUN_NAME,
           },
         },
       },

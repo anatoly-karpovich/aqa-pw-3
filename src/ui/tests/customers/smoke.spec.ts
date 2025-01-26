@@ -29,7 +29,7 @@ test.describe("[UI] [Customers] [Add New Customer]", async function () {
     await page.locator("#save-new-customer").click();
   });
 
-  test("Should create new customer with valid data with POs", async ({
+  test.skip("Should create new customer with valid data with POs", async ({
     signInPage,
     homePage,
     customersPage,

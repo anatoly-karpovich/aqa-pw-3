@@ -33,6 +33,7 @@ jobs:
           SALES_PORTAL_URL: ${{ secrets.SALES_PORTAL_URL }}
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_BOT_ID: ${{ secrets.TELEGRAM_CHAT_BOT_ID }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: npm run test:ui-smoke
         continue-on-error: true
 

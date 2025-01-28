@@ -1,0 +1,31 @@
+{
+  "headers": {
+    "date": "Tue, 28 Jan 2025 19:07:02 GMT",
+    "server": "Apache",
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "614",
+    "etag": "W/\"266-o3VHKvS++JojbTv7lcC7/YmGj30\"",
+    "keep-alive": "timeout=5, max=99",
+    "connection": "Keep-Alive"
+  },
+  "body": {
+    "Customer": {
+      "_id": "67992ad49f31117d8c4a9491",
+      "email": "Yessenia47@yahoo.com",
+      "name": "Name cymEpOpsZTvLGzFWQgGIjvQdRDvaUcbPTFk",
+      "country": "Russia",
+      "city": "City CdiixGIDGEEZAWi",
+      "street": "Street B8yLlcyG7uuYng6oI8yIAx4mGdQrskcYk",
+      "house": 708,
+      "flat": 8222,
+      "phone": "+738472404919",
+      "createdOn": "2025-01-28T19:07:00.000Z",
+      "notes": "Notes FPRYwkwQJNrEppoKplzLvGAmEoyNIEGVgjODLfuAcuSPRdCxbpmiyXCFYrcRgLqHHZdhXaIbwEEdUcXgNosxdjhpnKQgQzasREyEXaEdABPbyrjqpQYUZCbkalPPhcnNJVewMMivYQyBcqElbvOlCDsaIXPBdhzsYBjJosTeckeMUTEQbzPHkxSHCzMKfmgnFzpqNqfPgifmEoQKCgeAJVjKOrCXcUSCeXyRtcKXHAMuWFmxVJLp"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

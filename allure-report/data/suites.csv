@@ -1,3 +1,3 @@
 "DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
-"","969","Login to Sales Portal via API","setup","Tue Jan 28 18:23:28 UTC 2025","passed","Tue Jan 28 18:23:29 UTC 2025","","setup/auth.setup.ts","",""
-"","8027","Should create new customer with valid data with Page Services","chromium","Tue Jan 28 18:23:30 UTC 2025","passed","Tue Jan 28 18:23:38 UTC 2025","[UI] [Customers] [Add New Customer]","customers/smoke.spec.ts","",""
+"","725","Login to Sales Portal via API","setup","Tue Jan 28 18:26:17 UTC 2025","passed","Tue Jan 28 18:26:17 UTC 2025","","setup/auth.setup.ts","",""
+"","8144","Should create new customer with valid data with Page Services","chromium","Tue Jan 28 18:26:18 UTC 2025","passed","Tue Jan 28 18:26:26 UTC 2025","[UI] [Customers] [Add New Customer]","customers/smoke.spec.ts","",""

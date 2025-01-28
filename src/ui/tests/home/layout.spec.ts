@@ -6,7 +6,7 @@ import { test } from "../../../fixtures/services.fixture";
 test.describe(`[UI] [Home] Metrics layout`, async function () {
   test(
     "Should check layout of Orders This Year metric",
-    { tag: ["@regression"] },
+    { tag: ["@regression", "@visual"] },
     async function ({ signInPageService, mock, homePageService }) {
       const mockData = structuredClone(homePageMock);
       mockData.Metrics.orders.totalOrders = 10;
@@ -18,7 +18,7 @@ test.describe(`[UI] [Home] Metrics layout`, async function () {
 
   test(
     "Should check layout of Total Revenue metric",
-    { tag: ["@regression"] },
+    { tag: ["@regression", "@visual"] },
     async function ({ signInPageService, mock, homePageService }) {
       const mockData = structuredClone(homePageMock);
       mockData.Metrics.orders.totalRevenue = 100000000;
@@ -30,7 +30,7 @@ test.describe(`[UI] [Home] Metrics layout`, async function () {
 
   test(
     "Should check layout of Avg Order Value metric",
-    { tag: ["@regression"] },
+    { tag: ["@regression", "@visual"] },
     async function ({ signInPageService, mock, homePageService }) {
       const mockData = structuredClone(homePageMock);
       mockData.Metrics.orders.averageOrderValue = 10000;
@@ -42,7 +42,7 @@ test.describe(`[UI] [Home] Metrics layout`, async function () {
 
   test(
     "Should check layout of New Customers metric",
-    { tag: ["@regression"] },
+    { tag: ["@regression", "@visual"] },
     async function ({ signInPageService, mock, homePageService }) {
       const mockData = structuredClone(homePageMock);
       mockData.Metrics.customers.totalNewCustomers = 100;
@@ -54,7 +54,7 @@ test.describe(`[UI] [Home] Metrics layout`, async function () {
 
   test(
     "Should check layout of Canceled Orders metric",
-    { tag: ["@regression"] },
+    { tag: ["@regression", "@visual"] },
     async function ({ signInPageService, mock, homePageService }) {
       const mockData = structuredClone(homePageMock);
       mockData.Metrics.orders.totalCanceledOrders = 5;

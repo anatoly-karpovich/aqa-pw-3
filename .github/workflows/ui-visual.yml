@@ -1,10 +1,10 @@
-name: Run Playwright UI Smoke tests
+name: Run Playwright Visual Regression tests
 on:
   workflow_dispatch: # Manually trigger the workflow
-  # push:
-  #   branches:
-  #     - main
-  # pull_request:
+  push:
+    branches:
+      - main
+  pull_request:
 jobs:
   test:
     timeout-minutes: 60
@@ -34,7 +34,7 @@ jobs:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_BOT_ID: ${{ secrets.TELEGRAM_CHAT_BOT_ID }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-        run: npm run test:ui-smoke
+        run: npm run test:visual
         continue-on-error: true
 
       # Create Allure report

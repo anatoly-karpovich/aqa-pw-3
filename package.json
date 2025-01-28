@@ -8,6 +8,7 @@
     "test:ui": "npm run test -- --project=chromium",
     "test:ui-smoke": "npm run test:ui -- --grep @smoke",
     "test:ui-regression": "npm run test:ui -- --grep @regression",
+    "test:visual": "npm run test:ui -- --grep @visual",
     "report-html": "npx playwright show-report",
     "ui-mode": "npx playwright test --ui",
     "allure-report": "allure generate allure-results -o allure-report --clean",

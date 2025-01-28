@@ -1,6 +1,10 @@
 name: Run Playwright UI Smoke tests
 on:
   workflow_dispatch: # Manually trigger the workflow
+  push:
+    branches:
+      - main
+  pull_request:
 jobs:
   test:
     timeout-minutes: 60

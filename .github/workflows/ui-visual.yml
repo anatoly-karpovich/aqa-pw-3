@@ -40,15 +40,15 @@ jobs:
         continue-on-error: true
 
       # Create Allure report
-      - name: Create Allure report
-        run: npm run allure-report
+      # - name: Create Allure report
+      #   run: npm run allure-report
 
       # Save allure report into artifacts
-      - name: Save Allure report
-        uses: actions/upload-artifact@v4
-        with:
-          name: ui-smoke-report
-          path: ./allure-report
+      # - name: Save Allure report
+      #   uses: actions/upload-artifact@v4
+      #   with:
+      #     name: ui-smoke-report
+      #     path: ./allure-report
 
       # Save Playwright report into artifacts
       - name: Save Playwright report

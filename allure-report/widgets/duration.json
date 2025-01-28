@@ -1,0 +1,1 @@
+[{"uid":"3c8483ca124c0504","name":"Login to Sales Portal via API","time":{"start":1738088608777,"stop":1738088609746,"duration":969},"status":"passed","severity":"normal"},{"uid":"97003e70e538b2ca","name":"Should create new customer with valid data with Page Services","time":{"start":1738088610906,"stop":1738088618933,"duration":8027},"status":"passed","severity":"normal"}]

@@ -1,0 +1,31 @@
+{
+  "headers": {
+    "date": "Tue, 28 Jan 2025 18:23:38 GMT",
+    "server": "Apache",
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "617",
+    "etag": "W/\"269-gHuLCjqY9ZZoCmcTDzTyPo1EcvM\"",
+    "keep-alive": "timeout=5, max=99",
+    "connection": "Keep-Alive"
+  },
+  "body": {
+    "Customer": {
+      "_id": "679920a79f31117d8c4a93a1",
+      "email": "Palma_Jerde@hotmail.com",
+      "name": "Name YIMpwVITiAnPojQvXHsmTEjHeOjHrvrAQaC",
+      "country": "France",
+      "city": "City kzIaXItoraTOWOh",
+      "street": "Street AkiTZN3ARHyPydd9FNJmUmldM9rcaW56I",
+      "house": 777,
+      "flat": 9952,
+      "phone": "+336459227511",
+      "createdOn": "2025-01-28T18:23:00.000Z",
+      "notes": "Notes buyKgzAtbXwLWjUMYQVCGMjrNCqgNrUmixwhiOcsyeWNSvOeUNmPZEYuhbfTrfWBMSQCqfBxXaWoQmPpGComXmdMJlcwsqXvBwporNAjMKiEqAkhmeMcbubCatcjElXxnuvPMhXTdyEgZdckuTwVoTiwaqNYevlXhMKUMPQxprWHilTUcImVObfCnmTfuGWSRiXpfSCEQqXcZKqwNyusJZflnprunKrFoPjTnrcEhOgJXzPscAXk"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

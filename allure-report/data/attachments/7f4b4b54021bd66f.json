@@ -1,0 +1,6 @@
+{
+  "headers": {
+    "content-type": "application/json",
+    "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZTA0OTkzYWFlNDQwMTg0YWY2NDc3YiIsInJvbGVzIjpbIkFETUlOIl0sImlhdCI6MTczODA5MTUzNSwiZXhwIjoxNzM4MTc3OTM1fQ.5d_SLTZLHkQswO9YXaCUeUqT3Q6qmQvwSQ9WO3q0C9M"
+  }
+}

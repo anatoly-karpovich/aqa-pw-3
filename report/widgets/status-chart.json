@@ -1,0 +1,1 @@
+[{"uid":"97df4045d7ac6b8f","name":"Should create new customer with valid data with Page Services","time":{"start":1738094289736,"stop":1738094297529,"duration":7793},"status":"passed","severity":"normal"},{"uid":"a665a408f76327e9","name":"Login to Sales Portal via API","time":{"start":1738094288200,"stop":1738094288995,"duration":795},"status":"passed","severity":"normal"}]

@@ -1,0 +1,31 @@
+{
+  "headers": {
+    "date": "Tue, 28 Jan 2025 19:58:17 GMT",
+    "server": "Apache",
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "626",
+    "etag": "W/\"272-denbpbbdt1Ov8J4IF/uyA62Gozg\"",
+    "keep-alive": "timeout=5, max=99",
+    "connection": "Keep-Alive"
+  },
+  "body": {
+    "Customer": {
+      "_id": "679936d79f31117d8c4a9751",
+      "email": "Estefania.Boyle@yahoo.com",
+      "name": "Name RKghGxQNbPoggLxtySfHbXwafHutyeCuIKu",
+      "country": "Great Britain",
+      "city": "City tWdtRbRRsdWFOPu",
+      "street": "Street 1TgvIeVNOlvGHoGhdqRqKJmRK3APjZZdC",
+      "house": 675,
+      "flat": 8767,
+      "phone": "+305524255100",
+      "createdOn": "2025-01-28T19:58:00.000Z",
+      "notes": "Notes TBjkXdqvcaicmUDVZoiHXhcFqfrCBLTLdxeWmGJsfPEOQnWRUVOKuLoJCrxRvAJCSOBZNJsWiKIDZFLkNGdNHomekuTluTWMWymyCdyRLWEyzjShIELMUTgOULDJzjToWADiYjxoXtwPyTwYWDGUtBSmviKPfnPdTwpIDEtxtUxnDtiucDjfmwWqoLuBpJpDjjXDkXPYlHRtufaJKCEpSNiXKUbiGsGmUJizgWWwvfpXBFxfnAQD"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

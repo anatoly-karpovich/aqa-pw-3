@@ -9,4 +9,3 @@ src/.auth
 allure-results
 allure-report
 logs
-test.js

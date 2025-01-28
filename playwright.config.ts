@@ -3,6 +3,9 @@ import * as dotenv from "dotenv";
 
 dotenv.config();
 
+process.env.QASE_RUN_NAME = `Playwright Test Run ${new Date().toISOString()}`;
+process.env.CI && (process.env.QASE_MODE = "testops");
+
 /**
  * Read environment variables from file.
  * https://github.com/motdotla/dotenv
@@ -41,7 +44,7 @@ export default defineConfig({
           uploadAttachments: true,
           run: {
             complete: true,
-            title: `Playwright Test Run ${new Date().toISOString()}`,
+            title: process.env.QASE_RUN_NAME,
           },
         },
       },

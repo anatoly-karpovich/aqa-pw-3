@@ -10,9 +10,9 @@ export default async function () {
 
   await sendNotification(`Test run finished! 
 
-Link to Allure report:
+Link to deployed report:
 
-https://anatoly-karpovich.github.io/aqa-pw-3/allure-report/#
+https://anatoly-karpovich.github.io/aqa-pw-3/report
 
 
 Link to Qase report:

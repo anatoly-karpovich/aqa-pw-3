@@ -3,6 +3,9 @@ import * as dotenv from "dotenv";
 
 dotenv.config();
 
+process.env.QASE_RUN_NAME = `Playwright Test Run ${new Date().toISOString()}`;
+process.env.CI && (process.env.QASE_MODE = "testops");
+
 /**
  * Read environment variables from file.
  * https://github.com/motdotla/dotenv
@@ -16,16 +19,37 @@ dotenv.config();
  */
 export default defineConfig({
   testDir: "./src/ui/tests",
+  globalTeardown: require.resolve("./src/config/global-teardown.ts"),
   /* Run tests in files in parallel */
   fullyParallel: true,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
   forbidOnly: !!process.env.CI,
   /* Retry on CI only */
-  retries: process.env.CI ? 2 : 0,
+  retries: process.env.CI ? +process.env.CI : 1,
   /* Opt out of parallel tests on CI. */
   workers: process.env.CI ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-  reporter: "html",
+  reporter: [
+    ["html"],
+    ["list"],
+    ["allure-playwright"],
+    [
+      "playwright-qase-reporter",
+      {
+        testops: {
+          api: {
+            token: `${process.env.QASE_API_TOKEN}`,
+          },
+          project: "SPD",
+          uploadAttachments: true,
+          run: {
+            complete: true,
+            title: process.env.QASE_RUN_NAME,
+          },
+        },
+      },
+    ],
+  ],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
@@ -33,13 +57,31 @@ export default defineConfig({
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: "on-first-retry",
+    screenshot: "only-on-failure",
+    video: "on-first-retry",
   },
 
   /* Configure projects for major browsers */
   projects: [
+    { name: "setup", testMatch: /.*\.setup\.ts/ },
     {
       name: "chromium",
-      use: { ...devices["Desktop Chrome"], headless: true },
+      use: {
+        ...devices["Desktop Chrome"],
+        headless: true,
+        storageState: "src/.auth/user.json",
+      },
+      dependencies: ["setup"],
+      testDir: "./src/ui/tests",
+    },
+
+    {
+      name: "api",
+      use: {
+        ...devices["Desktop Chrome"],
+        headless: true,
+      },
+      testDir: "./src/api/tests",
     },
 
     // {

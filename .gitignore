@@ -5,3 +5,7 @@ node_modules/
 /playwright/.cache/
 .env
 tests-examples
+src/.auth
+allure-results
+allure-report
+logs

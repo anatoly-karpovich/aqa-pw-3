@@ -7,7 +7,7 @@ export const generateNewCustomer = (params?: Partial<ICustomer>) => {
   return {
     email: faker.internet.email(),
     name: `Name ${faker.string.alpha(35)}`,
-    country: COUNTRIES[getRandromEnumValue(COUNTRIES)],
+    country: getRandromEnumValue(COUNTRIES),
     city: `City ${faker.string.alpha(15)}`,
     street: `Street ${faker.string.alphanumeric(33)}`,
     house: faker.number.int(999),

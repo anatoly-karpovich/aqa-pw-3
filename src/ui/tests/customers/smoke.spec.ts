@@ -1,11 +1,11 @@
-import test, { expect } from "@playwright/test";
-import { SignInPage } from "../../pages/signIn.page";
-import { HomePage } from "../../pages/home.page";
-import { CustomersListPage } from "../../pages/customers/customers.page";
-import { AddNewCustomerPage } from "../../pages/customers/addNewCustomer.page";
+import { test as servicesFixture, expect } from "../../../fixtures/services.fixture";
+import { test as pagesFixture } from "../../../fixtures/pages.fixture";
 import { ADMIN_PASSWORD, ADMIN_USERNAME } from "../../../config/env";
 import { generateNewCustomer } from "../../../data/customers/generateCustomer";
 import { NOTIFICATIONS } from "../../../data/notifications";
+import { mergeTests } from "@playwright/test";
+
+const test = mergeTests(servicesFixture, pagesFixture);
 
 test.describe("[UI] [Customers] [Add New Customer]", async function () {
   test.skip("Should create new customer with valid data without POs", async ({ page }) => {
@@ -29,18 +29,18 @@ test.describe("[UI] [Customers] [Add New Customer]", async function () {
     await page.locator("#save-new-customer").click();
   });
 
-  test("Should create new customer with valid data with POs", async ({ page }) => {
-    const loginPage = new SignInPage(page);
-    const homePage = new HomePage(page);
-    const customersPage = new CustomersListPage(page);
-    const addNewCustomerPage = new AddNewCustomerPage(page);
-
-    await loginPage.openLoginPage();
-    await loginPage.fillCredentialsInputs({
+  test.skip("Should create new customer with valid data with POs", async ({
+    signInPage,
+    homePage,
+    customersPage,
+    addNewCustomerPage,
+  }) => {
+    await signInPage.openLoginPage();
+    await signInPage.fillCredentialsInputs({
       username: ADMIN_USERNAME,
       password: ADMIN_PASSWORD,
     });
-    await loginPage.clickSubmitButton();
+    await signInPage.clickSubmitButton();
     await homePage.waitForOpened();
     await homePage.clickOnViewDetailsButton("Customers");
     await customersPage.waitForOpened();
@@ -48,7 +48,27 @@ test.describe("[UI] [Customers] [Add New Customer]", async function () {
     await addNewCustomerPage.fillInputs(generateNewCustomer());
     await addNewCustomerPage.clickOnSaveButton();
     await customersPage.waitForOpened();
-    const notificationText = await customersPage.getFirstNotificationText();
+    const notificationText = await customersPage.getLastNotificationText();
     expect(notificationText).toBe(NOTIFICATIONS.CUSTOMER_CREATED);
   });
+
+  test(
+    "Should create new customer with valid data with Page Services",
+    { tag: ["@smoke", "@regression"] },
+    async ({
+      signInPageService,
+      homePageService,
+      customersPageService,
+      addNewCustomerPageService,
+      customersApiService,
+    }) => {
+      await signInPageService.openSalesPortal();
+      await homePageService.openCustomersPage();
+      await customersPageService.openAddNewCustomerPage();
+      const createdCustomer = await addNewCustomerPageService.create();
+      await customersPageService.validateCreateCustomerNotification();
+      const customerFromApi = await customersApiService.get(createdCustomer.Customer._id);
+      expect(createdCustomer.Customer).toMatchObject({ ...customerFromApi });
+    }
+  );
 });

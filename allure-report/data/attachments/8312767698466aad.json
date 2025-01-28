@@ -1,0 +1,31 @@
+{
+  "headers": {
+    "date": "Tue, 28 Jan 2025 19:21:09 GMT",
+    "server": "Apache",
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "623",
+    "etag": "W/\"26f-arWeNYDrey8mVK7jsJRiNaGRcl0\"",
+    "keep-alive": "timeout=5, max=99",
+    "connection": "Keep-Alive"
+  },
+  "body": {
+    "Customer": {
+      "_id": "67992e229f31117d8c4a9501",
+      "email": "Breanne.Rutherford@yahoo.com",
+      "name": "Name VXHuIrKPLxqsrIHKABOUEcCGCTrOzpIACIt",
+      "country": "Germany",
+      "city": "City qBBAZCqhtLaRghp",
+      "street": "Street pt4LHKwL2UVePexyJIMzNc9Y6IDwIqhFg",
+      "house": 851,
+      "flat": 1267,
+      "phone": "+889236406935",
+      "createdOn": "2025-01-28T19:21:00.000Z",
+      "notes": "Notes ixZRapMgTPbQIJEDIeLrRJVAEaJJnpEMDpEIjaOwiSlVmGoERdjYSOdwFkWrKfIVZipedJNIcsjfuowTnnfnVXypguMTJtmTTOMMAUDcrUIsfwjQukCzZnhUfxFNNMZHYxyORuwJgLLoMHtLouirpRVaJXRAyKdFlerSHstFIXcPBXalisxGMlfDaUSpaGJESJbZjRLOCNrPJLKHKGTPXLoehYdtNgNJQmFNgSOkBMEIHuXWJgxP"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}
